@@ -1,4 +1,5 @@
-import 'materialize-css';
+import '@materializecss/materialize';
+//import 'materialize-css';
 import { Button, Card, Row, Col, Container, Section, TextInput, Icon } from 'react-materialize';
 import Header from './components/Header/Header';
 import Footer from "./components/Footer/Footer";
