@@ -1,5 +1,5 @@
 import 'materialize-css';
-import { Button, Card, Row, Col, Container, Section } from 'react-materialize';
+import { Button, Card, Row, Col, Container, Section, TextInput, Icon } from 'react-materialize';
 import Header from './components/Header/Header';
 import Footer from "./components/Footer/Footer";
 
@@ -10,12 +10,13 @@ function App() {
       <Section className="no-pad-bot" id="index-banner">
         <Container>
           <br /><br />
-          <h1 className="header center orange-text">Starter Template</h1>
+          <h1 className="header center orange-text">save-youtube</h1>
           <Row className="center">
             <h5 className="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
+            <TextInput className="header col s12 light" label="動画リンクを入力..." />
           </Row>
           <Row className="center">
-            <a href="http://materializecss.com/getting-started.html" id="download-button" className="btn-large waves-effect waves-light orange">Get Started</a>
+            <a href="http://materializecss.com/getting-started.html" id="download-button" className="btn-large waves-effect waves-light orange"><Icon left={true}>sync</Icon> 解析</a>
           </Row>
           <br /><br />
         </Container>
