@@ -3,8 +3,30 @@ import '@materializecss/materialize';
 import { Button, Card, Row, Col, Container, Section, TextInput, Icon } from 'react-materialize';
 import Header from './components/Header/Header';
 import Footer from "./components/Footer/Footer";
+import Prompt from './components/Prompt/Prompt';
+import { useState } from 'react';
 
 function App() {
+  const [videoId, setVideoId] = useState(false);
+  const [error, setError] = useState(false)
+  const [tmpVideoLink, setTmpVideoLink] = useState("");
+
+  const checkUrl = () => {
+    if (tmpVideoLink.match(/^https:\/\/(.+)\.youtube\.com/) != null) {
+      const url = new URL(tmpVideoLink);
+      if (url.searchParams.has("v")) {
+        console.log(url);
+        setVideoId(url.searchParams.get("v"));
+      }
+    } else if (tmpVideoLink.match(/^https:\/\/youtu\.be/) != null) {
+      const url = new URL(tmpVideoLink);
+      console.log(url)
+      setVideoId(url.pathname.substr(1));
+    } else {
+
+    }
+  }
+
   return (
     <div className="App">
       <Header />
@@ -14,43 +36,17 @@ function App() {
           <h1 className="header center orange-text">save-youtube</h1>
           <Row className="center">
             <h5 className="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
-            <TextInput className="header col s12 light" label="動画リンクを入力..." />
+            <TextInput className="header col s12 light" label="動画リンクを入力..." value={tmpVideoLink} onChange={(e) => { setTmpVideoLink(e.target.value) }} />
           </Row>
           <Row className="center">
-            <a href="http://materializecss.com/getting-started.html" id="download-button" className="btn-large waves-effect waves-light orange"><Icon left={true}>sync</Icon> 解析</a>
+            <button onClick={checkUrl} id="download-button" className="btn-large waves-effect waves-light orange"><Icon left={true}>sync</Icon> 解析</button>
           </Row>
           <br /><br />
         </Container>
-
         <Container>
-          <Section>
-            <Row>
-              <Col s={12} m={4}>
-                <div className="icon-block">
-                  <h2 className="center light-blue-text"><i className="material-icons">flash_on</i></h2>
-                  <h5 className="center">Speeds up development</h5>
-
-                  <p className="light">We did most of the heavy lifting for you to provide a default stylings that incorporate our custom components. Additionally, we refined animations and transitions to provide a smoother experience for developers.</p>
-                </div>
-              </Col>
-              <Col s={12} m={4}>
-                <div class="icon-block">
-                  <h2 class="center light-blue-text"><i class="material-icons">group</i></h2>
-                  <h5 class="center">User Experience Focused</h5>
-
-                  <p class="light">By utilizing elements and principles of Material Design, we were able to create a framework that incorporates components and animations that provide more feedback to users. Additionally, a single underlying responsive system across all platforms allow for a more unified user experience.</p>
-                </div>
-              </Col>
-              <Col s={12} m={4}>
-                <div class="icon-block">
-                  <h2 class="center light-blue-text"><i class="material-icons">settings</i></h2>
-                  <h5 class="center">Easy to work with</h5>
-
-                  <p class="light">We have provided detailed documentation as well as specific code examples to help new users get started. We are also always open to feedback and can answer any questions a user may have about Materialize.</p>
-                </div>
-              </Col>
-            </Row>
-          </Section>
+          <div className="center">
+            {videoId ? <Prompt key={videoId} vKey={videoId} /> : null}
+          </div>
         </Container>
       </Section>
       <Footer />
