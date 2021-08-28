@@ -181,7 +181,7 @@ class Prompt extends React.Component {
     flagJob = async () => {
         const token = Cookies.get().YT_TOKEN;
         if (token === undefined) {
-            window.alert("通報に用いるYouTubeアカウントでログインしてください．");
+            window.alert("通報に用いるYouTubeアカウントでログインしてください．(現在Googleに申請中であるため，ログイン時に警告が表示されます．)");
             const provider = new firebase.auth.GoogleAuthProvider();
             provider.addScope('https://www.googleapis.com/auth/youtube.force-ssl');
             firebase.auth()
