@@ -1,6 +1,7 @@
 {
   "name": "matelialize-react-template",
   "version": "0.1.0",
+  "homepage": ".",
   "private": true,
   "dependencies": {
     "@materializecss/materialize": "^1.1.0-alpha",
