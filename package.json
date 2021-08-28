@@ -4,16 +4,21 @@
   "private": true,
   "dependencies": {
     "@materializecss/materialize": "^1.1.0-alpha",
+    "@supercharge/promise-pool": "^1.7.0",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
     "axios": "^0.21.1",
     "firebase": "^8.10.0",
+    "js-cookie": "^3.0.0",
+    "promise-pool": "^0.1.9",
     "react": "^17.0.2",
+    "react-device-detect": "^1.17.0",
     "react-dom": "^17.0.2",
     "react-materialize": "^3.9.9",
     "react-scripts": "4.0.3",
     "react-youtube": "^7.13.1",
+    "sweetalert2": "^11.1.4",
     "web-vitals": "^1.1.2"
   },
   "scripts": {
@@ -39,5 +44,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "chokidar": "^3.5.2"
   }
 }
