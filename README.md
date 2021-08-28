@@ -5,7 +5,7 @@
 
 # save-youtube-web
 A Web Tool to report spam comments. Now it's specialized for Japanese only.  
-https://bonychops.github.io/save-youtube/
+https://bonychops.github.io/save-youtube-web/
 
 ## Spam Link/Pattern
 https://gist.github.com/BonyChops/b3f623424754d946ca333e032a53b6e0  
