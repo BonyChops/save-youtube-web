@@ -4,7 +4,7 @@
 </div>
 
 # save-youtube-web
-A Web Tool to report spam comments. Now it's specialized for Japanese only.  
+A Web Tool to report YouTube spam comments. Now it's specialized for Japanese only.  
 https://bonychops.github.io/save-youtube-web/
 
 ## Spam Link/Pattern
