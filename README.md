@@ -1,6 +1,6 @@
 <div align="right">
 <h2 align="right">Language</h2>
- [English] | <a href="https://github.com/BonyChops/save-youtube/blob/main/README_JP.md">日本語</a>
+ [English] | <a href="https://github.com/BonyChops/save-youtube-web/blob/main/README.md">日本語</a>
 </div>
 
 # save-youtube-web
